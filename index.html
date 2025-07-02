@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>গণিতবিদ ২০২৫ - বাংলাদেশ অলিম্পিয়াডিয়ান্স ক্লাব</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/styles/index.css" />
+  </head>
+  <body>
+    <!-- Responsive Navbar -->
+    <!-- Navbar -->
+    <nav
+      class="navbar fixed top-0 w-full z-50 bg-white/70 backdrop-blur shadow-sm"
+    >
+      <div
+        class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <!-- Logo -->
+        <a href="#" class="flex items-center space-x-2">
+          <img src="./assets/img/elogo.png" alt="Logo" class="h-10 rounded" />
+          <span class="text-xl md:text-2xl font-bold text-gray-900"
+            >গণিতবিদ ২০২৫</span
+          >
+        </a>
+
+        <!-- Desktop Menu -->
+        <div
+          class="hidden md:flex space-x-6 text-sm font-semibold text-gray-800"
+        >
+          <a href="#segments" class="hover:text-blue-600 transition"
+            >Segments</a
+          >
+          <a href="#submission" class="hover:text-blue-600 transition"
+            >Submissions</a
+          >
+          <a href="#past" class="hover:text-blue-600 transition">Past Events</a>
+          <a href="#gallery" class="hover:text-blue-600 transition">Gallery</a>
+          <a href="#about-boc" class="hover:text-blue-600 transition"
+            >About BOC</a
+          >
+        </div>
+
+        <!-- Register Button -->
+        <a href="#register" class="hidden md:inline-block register-btn ml-4"
+          >নিবন্ধন করো</a
+        >
+
+        <!-- Hamburger -->
+        <button id="drawer-toggle" class="md:hidden focus:outline-none">
+          <svg
+            class="w-6 h-6 text-gray-800"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Drawer -->
+    <div
+      id="drawer"
+      class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden"
+    >
+      <div class="flex justify-between items-center px-4 py-4 border-b">
+        <span class="text-lg font-semibold">মেনু</span>
+        <button id="drawer-close" class="text-gray-700">✕</button>
+      </div>
+      <div class="flex flex-col p-4 space-y-4 text-gray-800 font-medium">
+        <a href="#segments" class="hover:text-blue-600 transition">Segments</a>
+        <a href="#submission" class="hover:text-blue-600 transition"
+          >Submissions</a
+        >
+        <a href="#past" class="hover:text-blue-600 transition">Past Events</a>
+        <a href="#gallery" class="hover:text-blue-600 transition">Gallery</a>
+        <a href="#about-boc" class="hover:text-blue-600 transition"
+          >About BOC</a
+        >
+        <a href="#register" class="register-btn mt-2">নিবন্ধন করো</a>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section
+      class="min-h-screen flex items-center justify-center text-center pt-36 pb-20 bg-gradient-to-br from-blue-50 via-white to-blue-100"
+    >
+      <div
+        class="glass max-w-3xl mx-auto px-6 py-10 text-gray-900 shadow-xl rounded-xl backdrop-blur-md"
+      >
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-blue-700">
+          গণিতবিদ ২০২৫
+        </h1>
+        <p class="text-lg mb-6">
+          বাংলাদেশের গণিতপিপাসু শিক্ষার্থীদের জন্য একটি অনন্য আয়োজন
+        </p>
+        <p class="text-md text-gray-800 leading-relaxed">
+          তোমরা যারা নিজেদের গণিতের দক্ষতা যাচাই করার সুযোগ খুঁজছ, অথবা নিজের
+          গাণিতিক দক্ষতা প্রমাণ করতে চাচ্ছো—তাদের জন্য বাংলাদেশ অলিম্পিয়াডিয়ান্স
+          ক্লাব ২০২০ সাল থেকেই আয়োজন করে আসছে বাংলাদেশের সবচেয়ে বড় গণিতের অনলাইন
+          মহোৎসব, গণিতবিদ।<br /><br />
+          সেই ধারায় বাংলাদেশ অলিম্পিয়াডিয়ান্স ক্লাব নিয়ে এসেছে ২০২৫ এর মেগা
+          ইভেন্ট—<strong class="text-blue-600">গণিতবিদ ২০২৫</strong>। যাদের আছে
+          গণিতের প্রতি আগ্রহ, উন্মাদনা—তাদের জন্যই গণিতবিদ ২০২৫। <br />এখানেই
+          প্রমাণ করে দাও যে তুমি গণিতের সম্রাট; হয়ে যাও গণিতবিদ ২০২৫!
+        </p>
+        <a
+          href="#register"
+          class="mt-8 inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 shadow-lg"
+        >
+          ✍️ এখনই নিবন্ধন করো
+        </a>
+      </div>
+    </section>
+
+    <!-- What is GonitBid -->
+    <section id="about" class="fade-in px-4">
+      <div class="max-w-6xl mx-auto glass">
+        <h2 class="section-title">🧮 গণিতবিদ কী?</h2>
+        <p>
+          <strong>গণিতবিদ</strong> হলো
+          <strong>বাংলাদেশ অলিম্পিয়াডিয়ান্স ক্লাব (BOC)</strong>-এর উদ্যোগে
+          আয়োজিত একটি জাতীয় গণিত উৎসব, যা যুক্তি, সৃজনশীল চিন্তাভাবনা এবং
+          প্রতিযোগিতামূলক মানসিকতাকে উৎসাহিত করে। গণিতবিদ আয়োজনের মূল লক্ষ্যই
+          হলো বাংলাদেশের প্রত্যন্ত অঞ্চল থেকে গাণিতিক প্রতিভাবান মস্তিষ্কগুলো
+          খুঁজে বের করে আনা।
+        </p>
+        <p>
+          গণিতবিদের যাত্রা শুরু হয় ২০২০ সালে, একটি সম্পূর্ণ অনলাইন ইভেন্ট
+          হিসেবে, বৈশ্বিক মহামারির মধ্যে। এরপর প্রতিটি আসরে নতুন নতুন সৃজনশীলতা
+          ও প্রযুক্তিগত উন্নয়নের সংযোজন ঘটে, যা গণিতবিদের পরিসর বাড়ানোর সাথে
+          সাথে লক্ষ্য অর্জনের দিকে বাংলাদেশ অলিম্পিয়াডিয়ান্স ক্লাবকে ধাবিত করে।
+        </p>
+        <p>
+          ২০২০, ২০২১ ও ২০২৩ আসরের পর ২০২৫ সালের গণিতবিদ আয়োজনটি প্রথমবারের মতো
+          দুটি ধাপে অনুষ্ঠিত হবে—একটি অনলাইন প্রাথমিক রাউন্ড এবং একটি অফলাইন
+          চূড়ান্ত রাউন্ড। এটি শুধু প্রতিযোগিতার পরিধি নয়, শিক্ষার্থীদের বাস্তব
+          অভিজ্ঞতা, পারস্পরিক সংযোগ ও একাডেমিক পরিপূর্ণতা অর্জনের একটি নতুন
+          দিগন্ত উন্মোচন করবে।
+        </p>
+        <blockquote
+          class="mt-6 border-l-4 border-green-500 pl-4 italic text-gray-700"
+        >
+          “গণিত হচ্ছে বিশেষ একটি ভাষা যে ভাষায় ঈশ্বর মহাবিশ্বকে লিখেছেন।” —
+          গ্যালিলিও গ্যালিলি (Galileo Galilei)
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- Segments -->
+    <section id="segments" class="fade-in px-4">
+      <div class="max-w-6xl mx-auto glass text-center py-8">
+        <h2 class="section-title mb-4">🧩 সেগমেন্ট সমূহ</h2>
+
+        <!-- Exam-based Segments -->
+        <div class="text-center mb-6">
+          <h3 class="text-2xl font-bold text-blue-600 mb-4">
+            🎓 পরীক্ষাভিত্তিক সেগমেন্ট
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="glass border-l-4 border-blue-400 p-4">
+              <h4 class="text-xl font-bold mb-1">📐 গণিত অলিম্পিয়াড</h4>
+              <p>
+                সংখ্যাতত্ত্ব, বীজগণিত, জ্যামিতি ও গননাতত্ত্ব ভিত্তিক সমস্যা
+                সমাধানের চ্যালেঞ্জ।
+              </p>
+            </div>
+            <div class="glass border-l-4 border-indigo-400 p-4">
+              <h4 class="text-xl font-bold mb-1">📏 জ্যামিতি অলিম্পিয়াড</h4>
+              <p>জ্যামিতিক প্রমাণ, চিত্র ও পরিমিতির সাথে যুদ্ধ!</p>
+            </div>
+            <div class="glass border-l-4 border-green-400 p-4">
+              <h4 class="text-xl font-bold mb-1">🧠 আইকিউ অলিম্পিয়াড</h4>
+              <p>
+                প্যাটার্ন, কোড ব্রেকিং, সুডোকু ও লজিক্যাল পাজল সমাধানের
+                চ্যালেঞ্জ।
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submission-based Segments -->
+        <div class="text-center">
+          <h3 class="text-2xl font-bold text-pink-600 mb-4">
+            📝 সাবমিশনভিত্তিক সেগমেন্ট
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="glass border-l-4 border-yellow-400 p-4">
+              <h4 class="text-xl font-bold mb-1">🔢 পাই ভ্যালু চ্যালেঞ্জ</h4>
+              <p>
+                π এর মান কতদূর মুখস্থ রাখতে পারো? মনোযোগ, স্মরণশক্তি ও
+                ক্ষিপ্রতার পরীক্ষা।
+              </p>
+            </div>
+            <div class="glass border-l-4 border-pink-400 p-4">
+              <h4 class="text-xl font-bold mb-1">🎭 ম্যাথ মিম</h4>
+              <p>
+                হাস্যরসের ছোঁয়ায় গণিত—সৃজনশীল ও শিক্ষামূলক মিম তৈরির
+                চ্যালেঞ্জ।
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners -->
+    <!-- <section id="partners" class="fade-in px-4">
+      <div class="max-w-6xl mx-auto glass text-center">
+        <h2 class="section-title">আমাদের অংশীদার</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 items-center">
+          <img
+            src="./assets/img/partner1.png"
+            alt="Partner 1"
+            class="mx-auto h-20 object-contain"
+          />
+          <img
+            src="./assets/img/partner2.png"
+            alt="Partner 2"
+            class="mx-auto h-20 object-contain"
+          />
+          <img
+            src="./assets/img/partner3.png"
+            alt="Partner 3"
+            class="mx-auto h-20 object-contain"
+          />
+          <img
+            src="./assets/img/partner4.png"
+            alt="Partner 4"
+            class="mx-auto h-20 object-contain"
+          />
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Categories -->
+    <section id="categories" class="fade-in px-4">
+      <div class="max-w-6xl mx-auto glass text-center py-8">
+        <h2 class="section-title mb-4">📚 ক্যাটাগরি</h2>
+        <p class="text-gray-700 mb-6">
+          অংশগ্রহণকারীদের শ্রেণিভিত্তিক শ্রেণিবিন্যাস
+          <strong>(Class as of May 2025)</strong> অনুসারে নিচের ক্যাটাগরিতে
+          বিভক্ত করা হয়েছে:
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">
+          <div class="glass border-l-4 border-blue-400 p-4">
+            <h3 class="text-xl font-bold mb-1">📘 প্রাইমারি</h3>
+            <p>
+              তৃতীয় থেকে পঞ্চম শ্রেণি<br /><span class="text-sm text-gray-500"
+                >Category Code: 1</span
+              >
+            </p>
+          </div>
+          <div class="glass border-l-4 border-green-400 p-4">
+            <h3 class="text-xl font-bold mb-1">📗 জুনিয়র</h3>
+            <p>
+              ষষ্ঠ থেকে অষ্টম শ্রেণি<br /><span class="text-sm text-gray-500"
+                >Category Code: 2</span
+              >
+            </p>
+          </div>
+          <div class="glass border-l-4 border-yellow-400 p-4">
+            <h3 class="text-xl font-bold mb-1">📙 সেকেন্ডারি</h3>
+            <p>
+              নবম-দশম শ্রেণি এবং এসএসসি ২০২৫<br /><span
+                class="text-sm text-gray-500"
+                >Category Code: 3</span
+              >
+            </p>
+          </div>
+          <div class="glass border-l-4 border-red-400 p-4">
+            <h3 class="text-xl font-bold mb-1">📕 হায়ার সেকেন্ডারি</h3>
+            <p>
+              একাদশ-দ্বাদশ শ্রেণি এবং এইচএসসি ২০২৫<br /><span
+                class="text-sm text-gray-500"
+                >Category Code: 4</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rounds -->
+    <section id="rounds" class="fade-in px-4">
+      <div class="max-w-6xl mx-auto glass text-center py-8">
+        <h2 class="section-title mb-6">🎯 রাউন্ড</h2>
+
+        <div class="grid md:grid-cols-2 gap-6 text-left">
+          <!-- Round 1: Online -->
+          <div class="glass border-l-4 border-blue-400 p-5">
+            <h3 class="text-xl font-bold mb-2">🌐 রাউন্ড ১ — অনলাইন পর্ব</h3>
+            <p class="mb-2">
+              অনলাইন পর্বটি ২০২৫ সালের জুলাই মাসে দুইটি ধাপে অনুষ্ঠিত হবে।
+            </p>
+            <ul class="list-disc pl-5 text-gray-700">
+              <li>
+                <strong>পরীক্ষা ধাপ:</strong> পরীক্ষাভিত্তিক সেগমেন্টগুলোর
+                পরীক্ষা গুগল ফর্মের মাধ্যমে অনলাইনে নেওয়া হবে। তারিখ ও সময়
+                পরবর্তীতে জানানো হবে
+              </li>
+              <li>
+                <strong>সাবমিশন ধাপ:</strong> বিওসি-এর পাবলিক ফেসবুক গ্রুপে
+                পোস্ট করে এরপর Google Form-এর মাধ্যমে সাবমিট করতে হবে
+              </li>
+            </ul>
+          </div>
+
+          <!-- Round 2: Offline -->
+          <div class="glass border-l-4 border-green-400 p-5">
+            <h3 class="text-xl font-bold mb-2">🏛️ রাউন্ড ২ — অফলাইন পর্ব</h3>
+            <p class="mb-2">
+              আগস্ট ২০২৫-এ নির্বাচিতদের নিয়ে ঢাকা শহরে সরাসরি প্রতিযোগিতা
+              অনুষ্ঠিত হবে। সেখানে পরীক্ষাভিত্তিক সেগমেন্টগুলোর চূড়ান্ত পর্ব
+              অনুষ্ঠিত হবে এবং সকল সেগমেন্টের বিজয়ীদের পুরস্কৃত করার মধ্য দিয়ে
+              যবনিকা পতন হবে।
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="submission" class="fade-in px-4">
+      <div class="max-w-6xl mx-auto glass py-10 px-6 text-gray-800">
+        <h2 class="section-title mb-8 text-center">📝 সাবমিশন নির্দেশনা</h2>
+
+        <p class="text-center mb-6">
+          গণিতবিদ ২০২৫-এর <strong>পাই ভ্যালু চ্যালেঞ্জ</strong> ও
+          <strong>ম্যাথ মিম</strong> সেগমেন্টে অংশগ্রহণ করতে হলে <br />
+          অবশ্যই
+          <a
+            href="https://www.facebook.com/groups/boc.group.public"
+            target="_blank"
+            class="text-blue-600 underline"
+            >বাংলাদেশ অলিম্পিয়াডিয়ান্স ক্লাবের ফেসবুক গ্রুপে</a
+          >
+          পোস্ট করতে হবে এবং ফর্ম পূরণ করতে হবে।
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Pi Value Challenge -->
+          <div class="glass border-l-4 border-yellow-400 p-5">
+            <h3 class="text-xl font-bold mb-2">🔢 পাই ভ্যালু চ্যালেঞ্জ</h3>
+            <ul class="list-disc pl-5 space-y-1 text-sm">
+              <li>১ মিনিটে ভিডিওতে পাই (π) এর মান বলো</li>
+              <li>কমপক্ষে দশমিকের পর ৪০ ঘর পর্যন্ত</li>
+              <li>গ্রুপে পোস্ট করতে হবে ভিডিওসহ</li>
+              <li>পোস্টের ক্যাপশনঃ</li>
+            </ul>
+            <div
+              class="bg-gray-100 rounded p-3 mt-2 font-mono text-sm leading-relaxed"
+            >
+              #গণিতবিদ২০২৫<br />
+              #পাই_ভ্যালু_চ্যালেঞ্জ<br />
+              নামঃ তোমার নাম<br />
+              প্রতিষ্ঠানঃ তোমার প্রতিষ্ঠান<br />
+              ক্যাটেগরিঃ স্কুল/কলেজ
+            </div>
+          </div>
+
+          <!-- Math Meme -->
+          <div class="glass border-l-4 border-pink-400 p-5">
+            <h3 class="text-xl font-bold mb-2">🎭 ম্যাথ মিম</h3>
+            <ul class="list-disc pl-5 space-y-1 text-sm">
+              <li>গণিতভিত্তিক মিম তৈরি করে গ্রুপে পোস্ট করো</li>
+              <li>নিজের বানানো মিম হতে হবে (কপি নয়)</li>
+              <li>সঠিক ক্যাপশন সহ পোস্ট করো</li>
+              <li>পোস্টের ক্যাপশনঃ</li>
+            </ul>
+            <div
+              class="bg-gray-100 rounded p-3 mt-2 font-mono text-sm leading-relaxed"
+            >
+              #গণিতবিদ২০২৫<br />
+              #ম্যাথ_মিম<br />
+              নামঃ তোমার নাম<br />
+              প্রতিষ্ঠানঃ তোমার প্রতিষ্ঠান<br />
+              ক্যাটেগরিঃ স্কুল/কলেজ
+            </div>
+          </div>
+        </div>
+
+        <!-- Submission Form & Categories -->
+        <div class="mt-10 text-center">
+          <p class="mb-2 text-sm">
+            📤 পোস্ট করার পর অবশ্যই নিচের ফর্মটি পূরণ করো, না হলে সাবমিশন গণ্য
+            হবে না।
+          </p>
+          <a
+            href="https://forms.gle/5rBdtQQYMrjti8CF6"
+            target="_blank"
+            class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition duration-300"
+          >
+            🔗 সাবমিশন ফর্ম পূরণ করো
+          </a>
+
+          <div class="mt-8">
+            <h4 class="text-lg font-semibold mb-2">🎓 ক্যাটেগরি:</h4>
+            <ul
+              class="list-disc pl-6 text-gray-700 text-sm inline-block text-left"
+            >
+              <li>স্কুল (তৃতীয়–দশম শ্রেণি এবং এসএসসি ২০২৫)</li>
+              <li>কলেজ (একাদশ–দ্বাদশ শ্রেণি এবং এইচএসসি ২০২৫)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Past Events -->
+    <section id="past" class="fade-in px-4">
+      <div class="max-w-6xl mx-auto glass text-center py-8">
+        <h2 class="section-title mb-6">📅 পূর্ববর্তী ইভেন্টসমূহ</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+          <!-- GonitBid 2023 -->
+          <div class="glass border-l-4 border-blue-500 p-5">
+            <h3 class="text-xl font-bold mb-2">
+              📘 ম্যাথ হেটার্স প্রেজেন্টস গণিতবিদ ২০২৩
+            </h3>
+            <p>
+              ৪৫০০+ অংশগ্রহণকারীর বিশাল অনলাইন প্রতিযোগিতাটিতে প্রথমবারের মতো
+              দাবা যুক্ত হয়। উন্নত ফর্ম ও রাফ সাবমিশন সিস্টেম নিশ্চিত করে
+              নিখুঁত মূল্যায়ন। পুরস্কার বিতরণী অনুষ্ঠিত হয়
+              <strong>জাতীয় বিজ্ঞান ও প্রযুক্তি জাদুঘর কমপ্লেক্স</strong>-এ।
+            </p>
+          </div>
+
+          <!-- GonitBid 2022–23 -->
+          <div class="glass border-l-4 border-green-500 p-5">
+            <h3 class="text-xl font-bold mb-2">🖥️ গণিতবিদ ২০২১</h3>
+            <p>
+              দ্বিতীয় আসরে প্রতিযোগিতাটিতে যুক্ত হয় সাবমিশনভিত্তিক সেগমেন্ট, যার
+              মাধ্যমে প্রতিযোগীদের পার্শ্ব-দক্ষতা ও সৃজনশীলতা যাচাই করা হয়।
+              গণিতবিদ ২০২১-এ অংশগ্রহণ করে ৫০০+ শিক্ষার্থী। এই আসরে প্রথমবারের
+              মতো অফলাইন পুরস্কার বিতরণী অনুষ্ঠিত হয়
+              <strong>জাতীয় বিজ্ঞান ও প্রযুক্তি জাদুঘর</strong>-এ।
+            </p>
+          </div>
+
+          <!-- GonitBid 2020–21 -->
+          <div class="glass border-l-4 border-indigo-500 p-5">
+            <h3 class="text-xl font-bold mb-2">🚀 গণিতবিদ ২০২০</h3>
+            <p>
+              গণিতবিদের প্রথম আয়োজন, শুরু হয়
+              <strong>COVID-19</strong> পরিস্থিতির মাঝে। অংশগ্রহণ করে দেশের
+              বিভিন্ন প্রান্ত থেকে শিক্ষার্থীরা। সম্পূর্ণ অনলাইন এই আয়োজনে Math
+              Olympiad, Geometry, Combinatorics, IQ, Code Break সহ অনেক সেগমেন্ট
+              ছিল।
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="fade-in px-4">
+      <div class="max-w-6xl mx-auto glass text-center py-8">
+        <h2 class="section-title mb-4">🎥 গ্যালারী</h2>
+        <p class="text-gray-600 mb-6">একঝলক গণিতবিদের অতীত মুহূর্তগুলো</p>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+          <div
+            class="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition duration-300"
+          >
+            <img
+              src="./assets/img/gallery1.jpg"
+              alt="Gallery Image 1"
+              class="w-full h-48 object-cover transform hover:scale-105 transition duration-300 cursor-pointer"
+            />
+          </div>
+          <div
+            class="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition duration-300"
+          >
+            <img
+              src="./assets/img/gallery2.jpg"
+              alt="Gallery Image 2"
+              class="w-full h-48 object-cover transform hover:scale-105 transition duration-300 cursor-pointer"
+            />
+          </div>
+          <div
+            class="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition duration-300"
+          >
+            <img
+              src="./assets/img/gallery3.jpg"
+              alt="Gallery Image 3"
+              class="w-full h-48 object-cover transform hover:scale-105 transition duration-300 cursor-pointer"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration -->
+    <section id="register" class="fade-in px-4">
+      <div class="max-w-6xl mx-auto glass text-center py-10 px-6">
+        <h2 class="section-title mb-3">📋 নিবন্ধন চলছে</h2>
+        <p class="text-lg text-gray-700 mb-2">
+          নিবন্ধন শুরু হচ্ছে <strong>৩ জুলাই ২০২৫</strong> থেকে গুগল ফর্মের
+          মাধ্যমে। নিবন্ধনের শেষ দিনঃ <strong>১৫ জুলাই ২০২৫</strong>
+        </p>
+        <p class="text-sm text-gray-500 mb-2">
+          সঠিক তথ্য দিয়ে অংশগ্রহণ নিশ্চিত করো আজই!
+        </p>
+        <p class="text-sm text-gray-700">
+          💳 রেজিস্ট্রেশন ফি: <strong>৫০ টাকা</strong> (শুধু অনলাইন রাউন্ডের
+          জন্য)
+        </p>
+
+        <a
+          href="https://forms.gle/emhg4mmSnwvo4FBJA"
+          target="_blank"
+          class="inline-block mt-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition duration-300"
+        >
+          ✍️ এখনই নিবন্ধন করো
+        </a>
+      </div>
+    </section>
+
+    <section id="about-boc" class="fade-in px-4">
+      <div class="max-w-6xl mx-auto glass text-center py-12 px-6">
+        <h2 class="section-title mb-4">🏛️ BOC কী?</h2>
+        <p class="text-gray-800 text-md leading-relaxed">
+          <strong>বাংলাদেশ অলিম্পিয়াডিয়ান্স ক্লাব (BOC)</strong> একটি অলাভজনক
+          শিক্ষামূলক প্ল্যাটফর্ম, যা প্রতিষ্ঠিত হয়
+          <strong>২৬ জানুয়ারি ২০২০</strong> তারিখে। এর যাত্রা শুরু হয়েছিল
+          <strong
+            >"অলিম্পিয়াড-সংক্রান্ত তথ্য দেশের প্রত্যন্ত অঞ্চলেও ছড়িয়ে
+            দেওয়া"</strong
+          >—এই স্বপ্নকে কেন্দ্র করে। শুরুতে BOC পরিচিত ছিল
+          <em>BD Olympiads Info</em> নামে, পরে নামকরণ হয়
+          <em>Information of Bangladesh’s Olympiad (IBDO)</em> এবং বর্তমানে
+          পরিচিত <strong>Bangladesh Olympiadians Club (BOC)</strong> নামে।
+        </p>
+        <p class="mt-4 text-gray-800 text-md leading-relaxed">
+          প্রতিষ্ঠার পর থেকেই BOC কাজ করে যাচ্ছে একটি পূর্ণাঙ্গ অলিম্পিয়াড
+          কমিউনিটি তৈরির লক্ষ্যে—যেখানে শিক্ষার্থীরা পাবে তথ্য, গাইডলাইন,
+          ম্যাটেরিয়ালস, প্রস্তুতি ও প্রতিযোগিতার সুযোগ। আমাদের মূলমন্ত্র হলো:
+          <strong>“Explore your hidden talent”</strong>, অর্থাৎ প্রতিটি
+          শিক্ষার্থীর লুকিয়ে থাকা প্রতিভাকে জাগিয়ে তোলা।
+        </p>
+        <p class="mt-4 text-gray-800 text-md leading-relaxed">
+          BOC নিয়মিত আয়োজন করে আসছে বিভিন্ন উৎসব ও প্রতিযোগিতা। আমাদের
+          উল্লেখযোগ্য আয়োজনগুলোর মধ্যে আছে:
+          <strong
+            >গণিতবিদ, Junior Science Enthusiasts, Mega Math Camp, Mega Math
+            Festival, Shahru Ramadan, Mathematical e-Olympiad, Mathematical Quiz
+            Contest</strong
+          >
+          এবং আরও অনেক কিছু।
+        </p>
+        <p class="mt-4 text-gray-800 text-md leading-relaxed">
+          আজকের দিনে, BOC একটি শক্তিশালী কমিউনিটিতে পরিণত হয়েছে, যেখানে ৩৫,০০০+
+          শিক্ষার্থী যুক্ত। আমরা বিশ্বাস করি, একদিন এই প্ল্যাটফর্মই হয়ে উঠবে
+          দেশের প্রতিটি অলিম্পিয়াডপ্রেমীর নির্ভরযোগ্য সহযাত্রী।
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Disclaimer Line -->
+    <div class="bg-gray-100 text-gray-700 text-center text-sm py-3 px-4">
+      🔔 আয়োজক কর্তৃপক্ষ প্রয়োজনে যেকোনো সময় নিয়ম, সময়সূচি ও সিদ্ধান্তে পরিবর্তন
+      আনার অধিকার সংরক্ষণ করে।
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white py-10 text-center">
+      <img
+        src="./assets/img/clogo.png"
+        alt="BOC Logo"
+        class="footer-logo mx-auto mb-4"
+      />
+      <h3 class="text-2xl font-bold">বাংলাদেশ অলিম্পিয়াডিয়ান্স ক্লাব</h3>
+      <p class="italic mb-3">"উন্মোচন করো তোমার সুপ্ত প্রতিভা"</p>
+
+      <p class="text-sm">
+        📞 +8801761831291 &nbsp; | &nbsp; 📧 bdolympiadiansclub@gmail.com
+      </p>
+
+      <!-- Social Links -->
+      <div class="mt-4 flex justify-center flex-wrap gap-3 text-sm">
+        <a
+          href="https://www.facebook.com/bangladesholympiadiansclub"
+          target="_blank"
+          class="bg-white text-blue-600 px-3 py-1 rounded-full hover:bg-blue-100 transition"
+          >ফেসবুক</a
+        >
+        <a
+          href="https://www.linkedin.com/company/bangladesh-olympiadians-club"
+          target="_blank"
+          class="bg-white text-blue-600 px-3 py-1 rounded-full hover:bg-blue-100 transition"
+          >লিঙ্কডইন</a
+        >
+        <a
+          href="https://www.youtube.com/channel/UCo0sXrVssl9fJoBg62c7xcw"
+          target="_blank"
+          class="bg-white text-blue-600 px-3 py-1 rounded-full hover:bg-blue-100 transition"
+          >ইউটিউব</a
+        >
+      </div>
+
+      <p class="mt-6 text-xs opacity-80">
+        © ২০২৫ বাংলাদেশ অলিম্পিয়াডিয়ান্স ক্লাব। সর্বস্বত্ব সংরক্ষিত।
+      </p>
+    </footer>
+
+    <div class="text-center text-sm text-gray-500 py-3 border-t bg-white/80">
+      Developed by
+      <a
+        href="https://github.com/lmtonay"
+        target="_blank"
+        class="text-blue-600 hover:underline"
+      >
+        Labib Mahfuz Tonay
+      </a>
+      with <span class="text-red-500">♥</span>
+    </div>
+
+    <!-- jQuery Scroll & Fade -->
+    <script>
+      $(document).ready(function () {
+        $('a[href^="#"]').on("click", function (e) {
+          e.preventDefault();
+          var t = $($(this).attr("href"));
+          if (t.length)
+            $("html, body").animate({ scrollTop: t.offset().top - 60 }, 800);
+        });
+        $(window)
+          .on("scroll", function () {
+            $(".fade-in").each(function () {
+              var top = $(this).offset().top;
+              var bottom = $(window).scrollTop() + $(window).height();
+              if (bottom > top + 100) $(this).addClass("visible");
+            });
+          })
+          .trigger("scroll");
+      });
+    </script>
+    <script>
+      const drawer = document.getElementById("drawer");
+      const toggleBtn = document.getElementById("drawer-toggle");
+      const closeBtn = document.getElementById("drawer-close");
+
+      toggleBtn.addEventListener("click", () => {
+        drawer.classList.remove("translate-x-full");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        drawer.classList.add("translate-x-full");
+      });
+
+      // Optional: click outside to close
+      document.addEventListener("click", (e) => {
+        if (!drawer.contains(e.target) && !toggleBtn.contains(e.target)) {
+          drawer.classList.add("translate-x-full");
+        }
+      });
+    </script>
+  </body>
+</html>
